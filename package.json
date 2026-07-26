@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "test": "playwright test",
-    "test:auth": "playwright test tests/auth/login.spec.ts",
+    "smoke": "node scripts/run-suite.js smoke",
+    "regression": "node scripts/run-suite.js regression",
+    "auth": "node scripts/run-suite.js auth",
+    "critical": "node scripts/run-suite.js critical",
     "report": "playwright show-report"
   },
   "devDependencies": {
