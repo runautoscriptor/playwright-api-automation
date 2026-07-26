@@ -1,4 +1,10 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
+
+const htmlOutputDir = process.env.PLAYWRIGHT_HTML_OUTPUT_DIR ?? 'playwright-report';
+const reporter = [
+  ['list'],
+  ['html', { open: 'never', outputFolder: htmlOutputDir }],
+];
 
 export default defineConfig({
   testDir: './tests',
@@ -7,7 +13,7 @@ export default defineConfig({
   expect: {
     timeout: 10000,
   },
-  reporter: [['html', { open: 'never', outputFolder: 'playwright-report' }], ['list']],
+  reporter,
   use: {
     baseURL: process.env.BASE_URL ?? 'https://dummyjson.com',
     extraHTTPHeaders: {
@@ -15,6 +21,7 @@ export default defineConfig({
     },
     trace: 'on-first-retry',
   },
-  retries: 0,
+  retries: process.env.CI ? 1 : 0,
   workers: 1,
+  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
 });
