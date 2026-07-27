@@ -8,6 +8,7 @@ const outputDirMap = {
   regression: 'regression-report',
   auth: 'auth-report',
   critical: 'critical-report',
+  users: 'users-report',
 };
 
 const tagMap = {
@@ -15,6 +16,7 @@ const tagMap = {
   regression: '@regression',
   auth: '@auth',
   critical: '@critical',
+  users: '@users',
 };
 
 const outputDir = outputDirMap[suite] || 'playwright-report';

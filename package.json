@@ -8,6 +8,7 @@
     "regression": "node scripts/run-suite.js regression",
     "auth": "node scripts/run-suite.js auth",
     "critical": "node scripts/run-suite.js critical",
+    "users": "node scripts/run-suite.js users",
     "report": "playwright show-report"
   },
   "devDependencies": {

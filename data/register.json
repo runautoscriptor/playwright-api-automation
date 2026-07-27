@@ -1,0 +1,193 @@
+{
+  "valid": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "username": "johndoe123",
+    "gender": "male",
+    "phone": "+1234567890"
+  },
+  "valid_female": {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com",
+    "username": "janesmith456",
+    "gender": "female",
+    "phone": "+9876543210"
+  },
+  "missing_firstName": {
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "testuser1"
+  },
+  "missing_lastName": {
+    "firstName": "John",
+    "email": "test@example.com",
+    "username": "testuser2"
+  },
+  "missing_email": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "username": "testuser3"
+  },
+  "missing_username": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test@example.com"
+  },
+  "empty_firstName": {
+    "firstName": "",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "testuser4"
+  },
+  "empty_lastName": {
+    "firstName": "John",
+    "lastName": "",
+    "email": "test@example.com",
+    "username": "testuser5"
+  },
+  "empty_email": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "",
+    "username": "testuser6"
+  },
+  "empty_username": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": ""
+  },
+  "spaces_only_firstName": {
+    "firstName": "   ",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "testuser7"
+  },
+  "spaces_only_lastName": {
+    "firstName": "John",
+    "lastName": "   ",
+    "email": "test@example.com",
+    "username": "testuser8"
+  },
+  "spaces_only_email": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "   ",
+    "username": "testuser9"
+  },
+  "spaces_only_username": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "   "
+  },
+  "invalid_email_format": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "invalid-email-format",
+    "username": "testuser10"
+  },
+  "invalid_email_no_domain": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test@",
+    "username": "testuser11"
+  },
+  "invalid_email_no_at": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "testexample.com",
+    "username": "testuser12"
+  },
+  "very_long_firstName": {
+    "firstName": "VeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFirstName",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "testuser13"
+  },
+  "very_long_username": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "VeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongUsername"
+  },
+  "special_characters_firstName": {
+    "firstName": "John@#$%^&*()",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "testuser14"
+  },
+  "special_characters_lastName": {
+    "firstName": "John",
+    "lastName": "Doe!@#$%^&*()",
+    "email": "test@example.com",
+    "username": "testuser15"
+  },
+  "special_characters_email": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test!@#$@example.com",
+    "username": "testuser16"
+  },
+  "special_characters_username": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "testuser@#$%^&*()"
+  },
+  "sql_injection_firstName": {
+    "firstName": "John'; DROP TABLE users; --",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "testuser17"
+  },
+  "sql_injection_lastName": {
+    "firstName": "John",
+    "lastName": "Doe' OR '1'='1",
+    "email": "test@example.com",
+    "username": "testuser18"
+  },
+  "sql_injection_email": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test@example.com' OR '1'='1",
+    "username": "testuser19"
+  },
+  "sql_injection_username": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "admin' --"
+  },
+  "xss_firstName": {
+    "firstName": "<script>alert('XSS')</script>",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "testuser20"
+  },
+  "xss_lastName": {
+    "firstName": "John",
+    "lastName": "<img src=x onerror='alert(1)'>",
+    "email": "test@example.com",
+    "username": "testuser21"
+  },
+  "xss_username": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test@example.com",
+    "username": "<svg onload='alert(1)'>"
+  },
+  "xss_email": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "test+<script>alert(1)</script>@example.com",
+    "username": "testuser22"
+  },
+  "null_firstName": null,
+  "null_lastName": null,
+  "null_email": null,
+  "null_username": null,
+  "empty_body": {}
+}
