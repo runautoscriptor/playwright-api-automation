@@ -14,8 +14,8 @@ export class ResponseValidator {
   }
 
   static async assertResponseTime(response: APIResponse, maxMilliseconds: number): Promise<void> {
-    const { startTime, responseEnd } = response.timing();
-    expect(responseEnd, 'Response timing must be available').toBeGreaterThanOrEqual(startTime);
-    expect(responseEnd - startTime).toBeLessThanOrEqual(maxMilliseconds);
+    const { responseEnd } = response.timing();
+    expect(responseEnd, 'Response timing must be available').toBeGreaterThanOrEqual(0);
+    expect(responseEnd).toBeLessThanOrEqual(maxMilliseconds);
   }
 }
