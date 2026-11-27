@@ -1,12 +1,15 @@
 # Playwright API Automation Framework
 
-A production-style Playwright API automation framework for testing the DummyJSON authentication endpoints.
+A production-style Playwright API automation framework for testing the DummyJSON authentication and user endpoints.
 
 ## Project Structure
 
 - tests/auth/login.spec.ts - login API test scenarios
-- api/auth.api.ts - reusable authentication API page-object style wrapper
+- tests/users/create-user.spec.ts - user creation API contract tests
+- api/auth.api.ts - reusable authentication API wrapper
+- api/users.api.ts - reusable user API wrapper
 - data/login.json - test data for login scenarios
+- data/user.json - test data for user creation scenarios
 - utils/apiClient.ts - reusable HTTP client abstraction
 - utils/responseValidator.ts - reusable response validation helpers
 - config/environment.ts - environment configuration
@@ -16,8 +19,11 @@ A production-style Playwright API automation framework for testing the DummyJSON
 
 1. Install Node.js 20+
 2. Install dependencies:
+
    `npm install`
-3. Install Playwright browsers:
+
+3. Install Playwright browsers if you plan to add browser-based tests:
+
    `npx playwright install`
 
 ## Configuration
@@ -59,11 +65,23 @@ Run login tests only:
 npm run test:auth
 ```
 
+Run user creation tests only:
+
+```bash
+npm run test:users
+```
+
 Run TypeScript type checking:
 
 ```bash
 npm run typecheck
 ```
+
+## User Creation Test Scope
+
+The user suite covers the `POST /users/add` endpoint. DummyJSON simulates user creation and returns a generated ID, but does not persist the created user on the server. These tests validate the response contract and returned request fields; they do not claim to verify a real account registration flow, persistence, or server-side field validation.
+
+See the [DummyJSON Users documentation](https://dummyjson.com/docs/users) for endpoint behavior.
 
 ## Generate Reports
 

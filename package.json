@@ -5,6 +5,7 @@
   "scripts": {
     "test": "playwright test",
     "test:auth": "playwright test tests/auth/login.spec.ts",
+    "test:users": "playwright test tests/users/create-user.spec.ts",
     "typecheck": "tsc --noEmit",
     "report": "playwright show-report"
   },

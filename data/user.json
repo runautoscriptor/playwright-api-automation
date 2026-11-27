@@ -1,0 +1,14 @@
+{
+  "basic": {
+    "firstName": "Alex",
+    "lastName": "Tester",
+    "age": 28
+  },
+  "withContactDetails": {
+    "firstName": "Jamie",
+    "lastName": "QA",
+    "age": 32,
+    "email": "jamie.qa@example.com",
+    "phone": "+1 555 010 1234"
+  }
+}
