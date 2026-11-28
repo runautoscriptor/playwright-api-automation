@@ -32,7 +32,7 @@ The framework supports these environment variables:
 
 | Variable | Default | Description |
 | --- | --- | --- |
-| `BASE_URL` | `https://dummyjson.com` | Base URL for API requests |
+| `BASE_URL` | `https://dummyjson.com` | Absolute HTTP or HTTPS URL for API requests |
 | `API_TIMEOUT` | `30000` | Playwright test timeout in milliseconds; must be a positive number |
 
 Example (PowerShell):
@@ -49,7 +49,7 @@ Example (macOS/Linux):
 BASE_URL=https://dummyjson.com API_TIMEOUT=45000 npm test
 ```
 
-An invalid `API_TIMEOUT` value (zero, negative, or non-numeric) causes configuration to fail with a clear error instead of passing an invalid timeout to Playwright.
+`BASE_URL` must be an absolute HTTP or HTTPS URL. Invalid, relative, or unsupported-protocol values cause configuration to fail with a clear error. `API_TIMEOUT` values that are zero, negative, or non-numeric also cause configuration to fail instead of passing an invalid timeout to Playwright.
 
 ## Run Tests
 
